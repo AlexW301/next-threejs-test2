@@ -1,30 +1,31 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
+import * as dat from "lil-gui";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
+
+// Canvas Component
+import Canvas from "../components/Canvas";
 
 export default function Home() {
-  const canvas = useRef(null);
-  useEffect(() => {
-    
-  });
+
   return (
     <div className={styles.container}>
-      <canvas className={styles.canvas} ref={canvas}></canvas>
+      <Canvas />
     </div>
   );
 }
-
 
 /**
  * EXAMPLE
  */
 
-
 // export default function Home() {
 //   const canvas = useRef(null);
+
 //   useEffect(() => {
 //     var scene = new THREE.Scene();
 //     var camera = new THREE.PerspectiveCamera(
@@ -63,7 +64,7 @@ export default function Home() {
 //   return (
 //     <div className={styles.container}>
 //       <h1>Hello World</h1>
-//       <canvas className={styles.canvas} ref={canvas}></canvas>
+//       <canvas className='canvas' ref={canvas}></canvas>
 //     </div>
 //   );
 // }
